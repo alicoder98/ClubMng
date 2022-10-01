@@ -161,6 +161,10 @@
       <Project>{33c3d3b2-344f-48a7-8948-0628f92f3e8a}</Project>
       <Name>ClubMng.DataLayer</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ClubMng.Utilities\ClubMng.Utilities.csproj">
+      <Project>{dee65628-fdad-4f41-930d-9d039bb290f7}</Project>
+      <Name>ClubMng.Utilities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

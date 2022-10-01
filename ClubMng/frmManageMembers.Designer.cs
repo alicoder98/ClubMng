@@ -37,7 +37,11 @@
             this.tst_search = new System.Windows.Forms.ToolStripTextBox();
             this.dgvmemb = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
+            this.athlete_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phoneNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adresss = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvmemb)).BeginInit();
             this.SuspendLayout();
@@ -77,6 +81,7 @@
             this.toolStripButton2.Size = new System.Drawing.Size(100, 115);
             this.toolStripButton2.Text = "ویرایش";
             this.toolStripButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
             // toolStripButton3
             // 
@@ -87,6 +92,7 @@
             this.toolStripButton3.Size = new System.Drawing.Size(100, 115);
             this.toolStripButton3.Text = "حذف";
             this.toolStripButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
             // 
             // toolStripLabel1
             // 
@@ -105,18 +111,26 @@
             this.tst_search.Size = new System.Drawing.Size(250, 118);
             this.tst_search.Text = "جستجو";
             this.tst_search.Click += new System.EventHandler(this.toolStripTextBox1_Click);
+            this.tst_search.TextChanged += new System.EventHandler(this.tst_search_TextChanged);
             // 
             // dgvmemb
             // 
             this.dgvmemb.AllowUserToAddRows = false;
             this.dgvmemb.AllowUserToDeleteRows = false;
+            this.dgvmemb.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvmemb.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvmemb.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.nId});
-            this.dgvmemb.Location = new System.Drawing.Point(0, 157);
+            this.athlete_Id,
+            this.nId,
+            this.fullName,
+            this.phoneNumber,
+            this.adresss});
+            this.dgvmemb.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvmemb.Location = new System.Drawing.Point(0, 118);
             this.dgvmemb.Name = "dgvmemb";
             this.dgvmemb.ReadOnly = true;
-            this.dgvmemb.Size = new System.Drawing.Size(800, 295);
+            this.dgvmemb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.dgvmemb.Size = new System.Drawing.Size(800, 332);
             this.dgvmemb.TabIndex = 1;
             this.dgvmemb.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -125,11 +139,19 @@
             this.label1.AutoSize = true;
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(726, 136);
+            this.label1.Location = new System.Drawing.Point(0, 100);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(71, 18);
             this.label1.TabIndex = 2;
             this.label1.Text = "لیست اعضا";
+            // 
+            // athlete_Id
+            // 
+            this.athlete_Id.DataPropertyName = "athlete_Id";
+            this.athlete_Id.HeaderText = "athlete_Id";
+            this.athlete_Id.Name = "athlete_Id";
+            this.athlete_Id.ReadOnly = true;
+            this.athlete_Id.Visible = false;
             // 
             // nId
             // 
@@ -137,6 +159,27 @@
             this.nId.HeaderText = "کدملی";
             this.nId.Name = "nId";
             this.nId.ReadOnly = true;
+            // 
+            // fullName
+            // 
+            this.fullName.DataPropertyName = "fullName";
+            this.fullName.HeaderText = "نام ونام خانوادگی";
+            this.fullName.Name = "fullName";
+            this.fullName.ReadOnly = true;
+            // 
+            // phoneNumber
+            // 
+            this.phoneNumber.DataPropertyName = "phoneNumber";
+            this.phoneNumber.HeaderText = "شماره موبایل";
+            this.phoneNumber.Name = "phoneNumber";
+            this.phoneNumber.ReadOnly = true;
+            // 
+            // adresss
+            // 
+            this.adresss.DataPropertyName = "adresss";
+            this.adresss.HeaderText = "آدرس";
+            this.adresss.Name = "adresss";
+            this.adresss.ReadOnly = true;
             // 
             // frmManageMembers
             // 
@@ -169,6 +212,10 @@
         private System.Windows.Forms.ToolStripTextBox tst_search;
         private System.Windows.Forms.DataGridView dgvmemb;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn athlete_Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn nId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fullName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phoneNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn adresss;
     }
 }

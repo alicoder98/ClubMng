@@ -52,6 +52,11 @@ namespace ClubMng.DAtaLayer.Services
             return mng_DbEntiti.athlete.Find(athleteid);
         }
 
+        public IEnumerable<athlete> GetCustomerByfilter(string query)
+        {
+            return mng_DbEntiti.athlete.Where(c=>c.fullName.Contains(query));
+        }
+
         public bool insertAthlete(athlete athlete)
         {
             try{
@@ -66,10 +71,7 @@ namespace ClubMng.DAtaLayer.Services
 
         }
 
-        public void save()
-        {
-            mng_DbEntiti.SaveChanges();
-        }
+
 
         public bool updateAthlete(athlete athlete)
         {

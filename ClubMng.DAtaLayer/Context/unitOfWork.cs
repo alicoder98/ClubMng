@@ -28,5 +28,9 @@ namespace ClubMng.DAtaLayer.Context
         {
             db.Dispose();
         }
+        public void save()
+        {
+            db.SaveChanges();
+        }
     }
 }
