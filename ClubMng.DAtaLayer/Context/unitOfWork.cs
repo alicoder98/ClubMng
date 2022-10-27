@@ -13,6 +13,7 @@ namespace ClubMng.DAtaLayer.Context
     {
         ClubMng_DbEntiti db = new ClubMng_DbEntiti();
         private IAthleteRepository _AthleteRepository;
+        private IListdo _listdo;
 
         public IAthleteRepository athleteRepository {
             get
@@ -24,6 +25,18 @@ namespace ClubMng.DAtaLayer.Context
                 return _AthleteRepository;
             }
             }
+
+        public IListdo Listdo
+        {
+            get
+            {
+                if (_listdo == null)
+                {
+                    _listdo = new Listdo(db);
+                }
+                return _listdo;
+            }
+        }
         public void Dispose()
         {
             db.Dispose();

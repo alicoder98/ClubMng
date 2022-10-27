@@ -12,29 +12,61 @@
           <Property Name="athlete_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="fullName" Type="nchar" MaxLength="30" Nullable="false" />
           <Property Name="nID" Type="nchar" MaxLength="10" Nullable="false" />
-          <Property Name="phoneNumber" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="phoneNumber" Type="nchar" MaxLength="11" Nullable="false" />
           <Property Name="adresss" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="lastpay" Type="nchar" MaxLength="18" />
+          <Property Name="status" Type="nchar" MaxLength="20" />
+          <Property Name="expired" Type="int" />
+          <Property Name="total" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="tempmydate" Type="datetime" />
+          <Property Name="mydate" Type="nchar" MaxLength="18" />
+          <Property Name="plantext" Type="nvarchar(max)" />
+          <Property Name="itemplans" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="store_listitem">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
         <EntityContainer Name="ClubMng_DbModelStoreContainer">
           <EntitySet Name="athlete" EntityType="Self.athlete" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="store_listitem" EntityType="Self.store_listitem" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ClubMng_DbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="ClubMng_DbEntiti" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="athlete" EntityType="ClubMng_DbModel.athlete" />
+          <EntitySet Name="store_listitem" EntityType="ClubMng_DbModel.store_listitem" />
+        </EntityContainer>
         <EntityType Name="athlete">
           <Key>
             <PropertyRef Name="athlete_Id" />
           </Key>
-          <Property Name="athlete_Id" Type="Int32" Nullable="false" />
-          <Property Name="fullName" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="nID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="phoneNumber" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="adresss" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="athlete_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fullName" Type="String" Nullable="false" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Name="nID" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="phoneNumber" Type="String" Nullable="false" MaxLength="11" FixedLength="true" Unicode="true" />
+          <Property Name="adresss" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="lastpay" Type="String" MaxLength="18" FixedLength="true" Unicode="true" />
+          <Property Name="status" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="expired" Type="Int32" />
+          <Property Name="total" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="tempmydate" Type="DateTime" Precision="3" />
+          <Property Name="mydate" Type="String" MaxLength="18" FixedLength="true" Unicode="true" />
+          <Property Name="plantext" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="itemplans" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityContainer Name="ClubMng_DbEntiti" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="athlete" EntityType="Self.athlete" />
-        </EntityContainer>
+        <EntityType Name="store_listitem">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -44,11 +76,27 @@
           <EntitySetMapping Name="athlete">
             <EntityTypeMapping TypeName="ClubMng_DbModel.athlete">
               <MappingFragment StoreEntitySet="athlete">
-                <ScalarProperty Name="athlete_Id" ColumnName="athlete_Id" />
-                <ScalarProperty Name="fullName" ColumnName="fullName" />
-                <ScalarProperty Name="nID" ColumnName="nID" />
-                <ScalarProperty Name="phoneNumber" ColumnName="phoneNumber" />
+                <ScalarProperty Name="itemplans" ColumnName="itemplans" />
+                <ScalarProperty Name="plantext" ColumnName="plantext" />
+                <ScalarProperty Name="mydate" ColumnName="mydate" />
+                <ScalarProperty Name="tempmydate" ColumnName="tempmydate" />
+                <ScalarProperty Name="total" ColumnName="total" />
+                <ScalarProperty Name="expired" ColumnName="expired" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="lastpay" ColumnName="lastpay" />
                 <ScalarProperty Name="adresss" ColumnName="adresss" />
+                <ScalarProperty Name="phoneNumber" ColumnName="phoneNumber" />
+                <ScalarProperty Name="nID" ColumnName="nID" />
+                <ScalarProperty Name="fullName" ColumnName="fullName" />
+                <ScalarProperty Name="athlete_Id" ColumnName="athlete_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="store_listitem">
+            <EntityTypeMapping TypeName="ClubMng_DbModel.store_listitem">
+              <MappingFragment StoreEntitySet="store_listitem">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

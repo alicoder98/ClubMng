@@ -43,7 +43,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="convertor\DataConverter.cs" />
+    <Compile Include="convertor\DateEditor.cs" />
+    <Compile Include="convertor\MyUtiliti.cs" />
     <Compile Include="convertor\RtlMessageBox.cs" />
+    <Compile Include="Itemsclass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

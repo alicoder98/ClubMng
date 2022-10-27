@@ -26,5 +26,6 @@ namespace ClubMng.DAtaLayer
         }
     
         public virtual DbSet<athlete> athlete { get; set; }
+        public virtual DbSet<store_listitem> store_listitem { get; set; }
     }
 }

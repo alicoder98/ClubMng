@@ -19,5 +19,13 @@ namespace ClubMng.DAtaLayer
         public string nID { get; set; }
         public string phoneNumber { get; set; }
         public string adresss { get; set; }
+        public string lastpay { get; set; }
+        public string status { get; set; }
+        public Nullable<int> expired { get; set; }
+        public Nullable<decimal> total { get; set; }
+        public Nullable<System.DateTime> tempmydate { get; set; }
+        public string mydate { get; set; }
+        public string plantext { get; set; }
+        public string itemplans { get; set; }
     }
 }

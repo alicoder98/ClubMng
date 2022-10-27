@@ -9,10 +9,11 @@ namespace ClubMng.DAtaLayer.Repository
     public interface IAthleteRepository
     {
         List<athlete> GetAllAthletes();
-        IEnumerable<athlete> GetCustomerByfilter(string query);
+        IEnumerable<athlete> GetAthleteByfilter(string query);
         athlete GetAthleteById(int athleteid);
         bool insertAthlete(athlete athlete);
         bool updateAthlete(athlete athlete);
+
         bool deleteAthlete(int athleteid);
         bool deleteAthletes(athlete athlete);
 

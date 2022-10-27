@@ -38,8 +38,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txt_adress = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btn_submit = new System.Windows.Forms.Button();
             this.btn_cancel = new System.Windows.Forms.Button();
+            this.btn_submit = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -80,7 +80,7 @@
             this.txt_nid.Location = new System.Drawing.Point(61, 81);
             this.txt_nid.Name = "txt_nid";
             this.txt_nid.Size = new System.Drawing.Size(156, 20);
-            this.txt_nid.TabIndex = 1;
+            this.txt_nid.TabIndex = 2;
             this.txt_nid.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label3
@@ -99,7 +99,7 @@
             this.txt_phone.Location = new System.Drawing.Point(61, 123);
             this.txt_phone.Name = "txt_phone";
             this.txt_phone.Size = new System.Drawing.Size(156, 20);
-            this.txt_phone.TabIndex = 1;
+            this.txt_phone.TabIndex = 3;
             this.txt_phone.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // label4
@@ -119,7 +119,7 @@
             this.txt_adress.Multiline = true;
             this.txt_adress.Name = "txt_adress";
             this.txt_adress.Size = new System.Drawing.Size(156, 93);
-            this.txt_adress.TabIndex = 1;
+            this.txt_adress.TabIndex = 4;
             this.txt_adress.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // groupBox1
@@ -143,26 +143,27 @@
             this.groupBox1.Text = "اطلاعات فرد";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // btn_submit
-            // 
-            this.btn_submit.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_submit.Location = new System.Drawing.Point(6, 279);
-            this.btn_submit.Name = "btn_submit";
-            this.btn_submit.Size = new System.Drawing.Size(280, 23);
-            this.btn_submit.TabIndex = 2;
-            this.btn_submit.Text = "ثبت";
-            this.btn_submit.UseVisualStyleBackColor = true;
-            this.btn_submit.Click += new System.EventHandler(this.btn_submit_Click);
-            // 
             // btn_cancel
             // 
             this.btn_cancel.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_cancel.Location = new System.Drawing.Point(6, 308);
             this.btn_cancel.Name = "btn_cancel";
             this.btn_cancel.Size = new System.Drawing.Size(280, 23);
-            this.btn_cancel.TabIndex = 3;
+            this.btn_cancel.TabIndex = 6;
             this.btn_cancel.Text = "بازگشت";
             this.btn_cancel.UseVisualStyleBackColor = true;
+            this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
+            // 
+            // btn_submit
+            // 
+            this.btn_submit.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_submit.Location = new System.Drawing.Point(6, 279);
+            this.btn_submit.Name = "btn_submit";
+            this.btn_submit.Size = new System.Drawing.Size(280, 23);
+            this.btn_submit.TabIndex = 5;
+            this.btn_submit.Text = "ثبت";
+            this.btn_submit.UseVisualStyleBackColor = true;
+            this.btn_submit.Click += new System.EventHandler(this.btn_submit_Click);
             // 
             // frmAddOrEdit
             // 

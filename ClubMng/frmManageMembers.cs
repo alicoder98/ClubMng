@@ -23,7 +23,10 @@ namespace ClubMng
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             frmAddOrEdit frmAddOrEdit = new frmAddOrEdit();
-            frmAddOrEdit.ShowDialog();
+            if (frmAddOrEdit.ShowDialog() == DialogResult.OK)
+            {
+                bindgrid();
+            }
         }
 
         private void toolStripTextBox1_Click(object sender, EventArgs e)
@@ -53,7 +56,7 @@ namespace ClubMng
         {
             using(unitOfWork db = new unitOfWork())
             {
-                dgvmemb.DataSource = db.athleteRepository.GetCustomerByfilter(tst_search.Text).ToList();
+                dgvmemb.DataSource = db.athleteRepository.GetAthleteByfilter(tst_search.Text).ToList();
                 
             }
         }
@@ -66,7 +69,7 @@ namespace ClubMng
                 using(unitOfWork db = new unitOfWork())
                 {
                     string name = dgvmemb.CurrentRow.Cells[2].Value.ToString();
-                    var k=RtlMessageBox.Show( $"حذف شود؟{name}", "حذف ورزشکار", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    var k=RtlMessageBox.Show($" {name} حذف شود؟ ", "حذف ورزشکار", MessageBoxButtons.YesNo);
                     if (DialogResult.Yes == k)
                     {
                         int atheletID = int.Parse(dgvmemb.CurrentRow.Cells[0].Value.ToString());
@@ -94,6 +97,11 @@ namespace ClubMng
                 frmAddOrEdit.ShowDialog();
                 
             }
+        }
+
+        private void toolStripButton4_Click(object sender, EventArgs e)
+        {
+            bindgrid();
         }
     }
 }

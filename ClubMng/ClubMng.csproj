@@ -12,6 +12,23 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>D:\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <WebPage>publish.htm</WebPage>
+    <ApplicationRevision>3</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -32,7 +49,22 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>A5D6E67DA3BE2DD6F6E1962F8530BEF3E34DF0F5</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>ClubMng_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Accounting.ViewModels">
+      <HintPath>..\..\Accounting\Accounting.ViewModels\bin\Debug\Accounting.ViewModels.dll</HintPath>
+    </Reference>
     <Reference Include="ClubManage.DataLayer">
       <HintPath>..\..\ClubManage\ClubManage.DataLayer\bin\Debug\net6.0-windows\ClubManage.DataLayer.dll</HintPath>
     </Reference>
@@ -68,11 +100,35 @@
     <Compile Include="frmAddOrEdit.Designer.cs">
       <DependentUpon>frmAddOrEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmeconmoy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmeconmoy.Designer.cs">
+      <DependentUpon>frmeconmoy.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmManageMembers.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmManageMembers.Designer.cs">
       <DependentUpon>frmManageMembers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmplan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmplan.Designer.cs">
+      <DependentUpon>frmplan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="newPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="newPlan.Designer.cs">
+      <DependentUpon>newPlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="popupGET.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="popupGET.Designer.cs">
+      <DependentUpon>popupGET.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -82,14 +138,27 @@
     <EmbeddedResource Include="frmAddOrEdit.resx">
       <DependentUpon>frmAddOrEdit.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmeconmoy.resx">
+      <DependentUpon>frmeconmoy.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmManageMembers.resx">
       <DependentUpon>frmManageMembers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmplan.resx">
+      <DependentUpon>frmplan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="newPlan.resx">
+      <DependentUpon>newPlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="popupGET.resx">
+      <DependentUpon>popupGET.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="ClubMng_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -109,6 +178,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\2803801.webp" />
     <None Include="Resources\addico.png" />
   </ItemGroup>
   <ItemGroup>
@@ -165,6 +235,21 @@
       <Project>{dee65628-fdad-4f41-930d-9d039bb290f7}</Project>
       <Name>ClubMng.Utilities</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wp2613870.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
